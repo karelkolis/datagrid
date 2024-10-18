@@ -32,7 +32,7 @@ class SubmitButton extends Button
 		$this->control = Html::el('button', ['type' => 'submit', 'name' => 'submit']);
 	}
 
-	public function getControl(Stringable|string|null $caption = null): Html
+	public function getControl($caption = null): Html
 	{
 		$el = parent::getControl($caption);
 
