@@ -199,7 +199,7 @@
 							{='contributte_datagrid.action'|translate}
 						</th>
 					</tr>
-					<tr n:block="header-filters" {*n:if="!empty($filters) && !$control->hasOuterFilterRendering()"*}>
+					<tr n:block="header-filters"> {*n:if="!empty($filters) && !$control->hasOuterFilterRendering()"*}
 						{foreach $columns as $key => $column}
 							{var $th = $column->getElementForRender('th', $key)}
 							{$th->startTag()|noescape}
@@ -224,7 +224,7 @@
 							{$th->endTag()|noescape}
 						{/foreach}
 						<th n:if="$actions || $control->isSortable() || $itemsDetail || $inlineEdit || $inlineAdd" class="col-action text-center">
-							{if !$control->hasAutoSubmit() {*&& !$control->hasOuterFilterRendering()*}}
+							{if !$control->hasAutoSubmit() } {*&& !$control->hasOuterFilterRendering()*}
 								{input $filter['filter']['submit']}
 							{/if}
 						</th>
